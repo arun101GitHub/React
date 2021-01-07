@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Basic Animation</title>
+      <link rel="stylesheet" type="test/css" href="myStyle.css">
+      <script type = "text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+       integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+       crossorigin="anonymous"></script>
+       <link href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
+         
+      
+      
+   </head>
+   
+   <body>
+ 
+      <h1>JQuery Tutorial</h1>
+      <p>Animation Tricks with fadein and fadeout</p>
+      <script>
+       var opacity=0;
+       var intervalID=0;
+       function fadeOut()
+       {
+           intervalID=setInterval(hide,20);
+       }
+       function fadeIn()
+       {
+           intervalID=setInterval(show,20);
+       }
+       
+       function hide()
+        {
+            var img = document.getElementById("img1");
+            opacity = Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+            if(opacity>0)
+             {
+                 opacity=opacity-0.1;
+                 img.style.opacity=opacity;
+                 console.log(opacity);
+             }
+             else
+             {
+                 clearInterval(intervalID);
+             }
+        }
+       
+      $(document).ready(function() {
+      $("button").click(function() {
+          $("#img1") fadeOut();
+      });
+    });
+      <br>
+       <img id="img1" src="goldie.jpeg" width="250px">
+      <br>
+      <button onclick="fadeIn()" id="btnStop">Fade In</button>      
+      <p2>
+      <ul>
+         <li>Golden Reriever</li>
+         
+         <li>Siberian Husky</li>
+         
+         <li>Boxer</li>
+      
+     </ul>
+     </p2>
+      
+   </body>
+</html>
